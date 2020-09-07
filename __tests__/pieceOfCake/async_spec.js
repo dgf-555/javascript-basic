@@ -6,7 +6,7 @@ describe('for asynchronous', () => {
 
       // <--start
       // Please write down the correct value. You should write the final result directly.
-      const expected = undefined;
+      const expected = ['after calling setTimeout','async callback triggered'];
       // --end->
 
       expect(logs).toEqual(expected);
@@ -14,7 +14,7 @@ describe('for asynchronous', () => {
     }, 500);
     logs.push('after calling setTimeout');
   });
-
+ 
   it('should return immediately and later trigger the callback using promise', (done) => {
     function setTimeoutUsingPromise(ms) {
       return new Promise(resolve => setTimeout(() => resolve(), ms));
@@ -27,7 +27,7 @@ describe('for asynchronous', () => {
 
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['after calling setTimeout','async callback triggered'];
         // --end->
 
         expect(logs).toEqual(expected);
@@ -48,7 +48,7 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Failed! >_<'];
         // --end->
 
         expect(logs).toEqual(expected);
@@ -68,7 +68,7 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Caught! >_<'];
         // --end->
 
         expect(logs).toEqual(expected);
@@ -93,8 +93,9 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Caught! >_<','Continued','Another continued','Error handled: Holy ~'];
         // --end->
+        console.log(logs);
         expect(logs).toEqual(expected);
         done();
       });
